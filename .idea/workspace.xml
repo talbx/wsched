@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b3ff2b3-fcd6-4cc9-81ed-e385551f7556" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/BBQ.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dishes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Order.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Task.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WeekTable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WeekTable2.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
