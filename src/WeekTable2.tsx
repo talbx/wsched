@@ -2,10 +2,10 @@ import React from "react";
 import {Container, Label, Table} from "semantic-ui-react";
 import {Order} from "./Order";
 import {Dish} from "./Dishes";
+import {dow} from "./tools";
 
-const WeekTable2 = ({dishes}: any) => {
-
-    const dow = ['Montag', "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+//@ts-ignore
+const WeekTable2 = ({dishes}) => {
 
     return (
         <Container>
