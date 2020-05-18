@@ -7,6 +7,7 @@ const TodoCard = () => {
         <div>
             <Card fluid color="teal" style={{padding: '1em 0em'}}>
                 <Card.Content>
+                <Card.Header>Todos</Card.Header>
                     <TodoTable/>
                 </Card.Content>
             </Card>

@@ -43,7 +43,7 @@ function processDish(dish: Dish) {
             {dish.name} <br/>
             <Label basic className="mini" color="green">Veggie</Label>
         </Table.Cell>
-    } else if(dish.name === "Grillen"){
+    } else if (dish.name === "Grillen") {
         return <Table.Cell key={dish.uuid}>
             {dish.name} <br/>
             <Label basic className="mini" color="red">BBQ</Label>
@@ -56,11 +56,17 @@ function processOrder(order: Order) {
     if (order.veggie) {
         return <Table.Cell key={order.uuid}>
             {order.name} <br/>
-            <Label basic className="mini" color="green">Veggie</Label>
-            <Label basic className="mini" color="black">Bestellung</Label>
+            <div style={{display: "flex"}}>
+                <Label basic className="mini" color="green">Veggie</Label>
+                <Label basic className="mini" color="black">Bestellung</Label>
+                <Label basic className="mini" color="blue">{order.type}</Label>
+            </div>
         </Table.Cell>
     }
     return <Table.Cell key={order.uuid}>{order.name} <br/>
-        <Label basic className="mini" color="black">Bestellung</Label>
+        <div style={{display: "flex"}}>
+            <Label basic className="mini" color="black">Bestellung</Label>
+            <Label basic className="mini" color="blue">{order.type}</Label>
+        </div>
     </Table.Cell>
 }

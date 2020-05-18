@@ -1,4 +1,4 @@
-import {Button, Card, Checkbox, Input} from "semantic-ui-react";
+import {Button, Container, Card, Checkbox, Header, Input} from "semantic-ui-react";
 import {generateDishes, isValidPassphrase} from "./tools";
 import WeekTable2 from "./WeekTable2";
 import React, {useState} from "react";
@@ -18,6 +18,7 @@ const MenuCard = () => {
     return (
         <Card fluid color="teal" style={{padding: '1em 0em'}}>
             <Card.Content>
+                <Card.Header>Speiseplan</Card.Header>
                 <Checkbox style={{padding: '0em 1em'}} toggle onChange={() => setBbq(!bbq)}
                           label="Grillwetter? "/>
                 <Checkbox style={{padding: '0em 1em'}} toggle onChange={() => setOrder(!order)} checked={order}
@@ -34,7 +35,10 @@ const MenuCard = () => {
             {
                 dishes.length !== 0
                 &&
-                <WeekTable2 dishes={dishes}/>
+                <Container>
+                    <Header as='h2'>Speiseplan für KW 3</Header>
+                    <WeekTable2 dishes={dishes}/>
+                </Container>
             }
         </Card>
     )

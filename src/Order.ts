@@ -15,11 +15,11 @@ export class Order {
 }
 
 export enum FoodType {
-    SUSHI,
-    PIZZA,
-    GREEK,
-    ASIA,
-    BURGER
+    SUSHI="SUSHI",
+    PIZZA="PIZZA",
+    GREEK="GRIECHISCH",
+    ASIA="ASIATISCH",
+    BURGER="BURGER"
 }
 
 export const deliveryServices: Order[] = [
