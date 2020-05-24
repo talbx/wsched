@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'semantic-ui-css/semantic.min.css'
@@ -7,6 +7,8 @@ import MenuCard from "./MenuCard";
 import TodoCard from "./TodoCard";
 
 const App = () => {
+    const componentRef = useRef();
+
     return (
         <Grid container style={{padding: '3em 0em'}}>
             <Container>

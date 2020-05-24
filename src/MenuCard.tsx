@@ -1,4 +1,4 @@
-import {Button, Container, Card, Checkbox, Header, Input} from "semantic-ui-react";
+import {Button, Card, Checkbox, Container, Header, Input} from "semantic-ui-react";
 import {generateDishes, isValidPassphrase} from "./tools";
 import WeekTable2 from "./WeekTable2";
 import React, {useState} from "react";
@@ -42,6 +42,6 @@ const MenuCard = () => {
             }
         </Card>
     )
-}
+};
 
 export default MenuCard;

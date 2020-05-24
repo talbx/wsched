@@ -18,9 +18,5 @@ export const tasks = [
     task("Aufräumen"),
     task("Pfand + Papier"),
     task("Zettelwirtschaft"),
-    task("Wäsche"),
-
-
-
-
-]
+    task("Wäsche")
+];

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import {Container, Label, Table} from "semantic-ui-react";
 import {Order} from "./Order";
 import {Dish} from "./Dishes";
@@ -6,34 +6,37 @@ import {dow} from "./tools";
 
 //@ts-ignore
 const WeekTable2 = ({dishes}) => {
-
+    const ref = useRef();
     return (
-        <Container>
-            <Table celled>
-                <Table.Header>
-                    <Table.Row>
-                        {
-                            dow.map(day => <Table.HeaderCell key={day}>{day}</Table.HeaderCell>)
-                        }
-                    </Table.Row>
-                </Table.Header>
-                <Table.Body>
-                    <Table.Row>
-                        {
-                            //@ts-ignore
-                            dishes.map(thingy => {
-                                if (thingy instanceof Order) {
-                                    return processOrder(thingy);
-                                }
-                                return processDish(thingy);
-                            })
-                        }
-                    </Table.Row>
-                </Table.Body>
-            </Table>
-        </Container>
+        //@ts-ignore
+        <div ref={ref}>
+            <Container>
+                <Table celled>
+                    <Table.Header>
+                        <Table.Row>
+                            {
+                                dow.map(day => <Table.HeaderCell key={day}>{day}</Table.HeaderCell>)
+                            }
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                        <Table.Row>
+                            {
+                                //@ts-ignore
+                                dishes.map(thingy => {
+                                    if (thingy instanceof Order) {
+                                        return processOrder(thingy);
+                                    }
+                                    return processDish(thingy);
+                                })
+                            }
+                        </Table.Row>
+                    </Table.Body>
+                </Table>
+            </Container>
+        </div>
     )
-}
+};
 
 export default WeekTable2;
 
