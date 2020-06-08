@@ -1,19 +1,19 @@
-import {uuidv4} from "./tools";
+import {uuidv4} from "../util/tools";
 
 export class Dish {
     name: string;
     uuid: string;
     veggie: boolean;
 
-    constructor(name: string, uuid: string, veggie: boolean) {
+    constructor(name: string, veggie: boolean) {
         this.name = name;
-        this.uuid = uuid;
+        this.uuid = uuidv4();
         this.veggie = veggie;
     }
 }
 
 const dish = (name: string, veggie: boolean): Dish => {
-    return new Dish(name, uuidv4(), veggie);
+    return new Dish(name, veggie);
 };
 
 export const dishes: Dish[] = [

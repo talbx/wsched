@@ -1,25 +1,21 @@
-import {uuidv4} from "./tools";
+import {Dish} from "./Dish";
 
-export class Order {
-    name: string;
+export class Order extends Dish {
     type: FoodType;
-    veggie: boolean;
-    uuid: string;
 
-    constructor(name: string, type:FoodType, veggie: boolean) {
-        this.name = name;
+    constructor(name: string, type: FoodType, veggie: boolean) {
+        super(name, veggie);
         this.type = type;
-        this.veggie = veggie;
-        this.uuid = uuidv4();
     }
 }
 
 export enum FoodType {
-    SUSHI="SUSHI",
-    PIZZA="PIZZA",
-    GREEK="GRIECHISCH",
-    ASIA="ASIATISCH",
-    BURGER="BURGER"
+    SUSHI = "SUSHI",
+    PIZZA = "PIZZA",
+    GREEK = "GRIECHISCH",
+    ASIA = "ASIATISCH",
+    BURGER = "BURGER",
+    REGULAR = "REGULAR"
 }
 
 export const deliveryServices: Order[] = [

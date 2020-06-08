@@ -1,7 +1,8 @@
 import {Button, Card, Checkbox, Container, Header, Input} from "semantic-ui-react";
-import {generateDishes, isValidPassphrase} from "./tools";
+import {generateDishes, isValidPassphrase} from "../util/tools";
 import WeekTable2 from "./WeekTable2";
 import React, {useState} from "react";
+import moment from "moment";
 
 const MenuCard = () => {
     const [bbq, setBbq] = useState(false)
@@ -36,7 +37,11 @@ const MenuCard = () => {
                 dishes.length !== 0
                 &&
                 <Container>
-                    <Header as='h2'>Speiseplan für KW 3</Header>
+                    <Header as='h2'>Speiseplan für KW
+                        {
+                            moment().week()
+                    }
+                    </Header>
                     <WeekTable2 dishes={dishes}/>
                 </Container>
             }

@@ -1,5 +1,5 @@
-import {Dish, dishes} from "./Dishes";
-import {deliveryServices} from "./Order";
+import {Dish, dishes} from "../models/Dish";
+import {deliveryServices} from "../models/Order";
 
 var md5 = require('md5');
 
@@ -24,7 +24,7 @@ export const generateDishes = (withOrder: boolean, veggieOnly: boolean, withBbq:
             }
         });
     }
-    dishes.forEach(dish => {
+    dishes.forEach((dish: Dish) => {
         if (veggieOnly && dish.veggie || !veggieOnly) {
             arr.push(dish)
         }
@@ -34,7 +34,7 @@ export const generateDishes = (withOrder: boolean, veggieOnly: boolean, withBbq:
         console.log("WITH BBQ: ", withBbq);
         const shuffled = arr.sort(() => 0.5 - Math.random());
         let slice = shuffled.slice(0, 6);
-        slice.push(new Dish("Grillen", uuidv4(), false));
+        slice.push(new Dish("Grillen", false));
         return slice.sort(() => 0.5 - Math.random())
     }
     const shuffled = arr.sort(() => 0.5 - Math.random());
