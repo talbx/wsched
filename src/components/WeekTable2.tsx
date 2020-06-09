@@ -1,5 +1,5 @@
 import React, {useRef} from "react";
-import {Container, GridRow} from "semantic-ui-react";
+import {Container} from "semantic-ui-react";
 import {dow} from "../util/tools";
 import {Dish} from "../models/Dish";
 import {DishCard} from "./DishCard";
@@ -16,7 +16,7 @@ const WeekTable2 = ({dishes}: Props) => {
                     dow.map(day => {
                         var index = dow.indexOf(day);
                         var dish = dishes[index];
-                        return <DishCard  key={dish.uuid} dish={dish} weekDay={day}/>
+                        return <DishCard key={dish.uuid} dish={dish} weekDay={day}/>
                     })
                 }
             </Container>

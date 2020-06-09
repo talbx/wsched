@@ -4,14 +4,9 @@ var md5 = require('md5');
 
 export function uuidv4(): string {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+        const r = Math.random() * 16 | 0, v = c === 'x' ? r : ((r & 0x3) | 0x8);
         return v.toString(16);
     });
-}
-
-const generateNRandomDishes = (n: number) => {
-    const shuffled = dishes.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, n);
 }
 
 export const regenerateDish = (previousDish: Dish): Dish => {
@@ -22,30 +17,21 @@ export const regenerateDish = (previousDish: Dish): Dish => {
     return shuffled.slice(0, 1)[0];
 }
 
-
-
 export const generateDishes = (withOrder: boolean, veggieOnly: boolean, withBbq: boolean) => {
     const arr: any[] = [];
     if (withOrder) {
         deliveryServices.forEach(service => {
-            if (veggieOnly && service.veggie || !veggieOnly) {
+            if ((veggieOnly && service.veggie) || !veggieOnly) {
                 arr.push(service)
             }
         });
     }
     dishes.forEach((dish: Dish) => {
-        if (veggieOnly && dish.veggie || !veggieOnly) {
+        if ((veggieOnly && dish.veggie) || !veggieOnly) {
             arr.push(dish)
         }
     });
 
-    if (false) {
-        console.log("WITH BBQ: ", withBbq);
-        const shuffled = arr.sort(() => 0.5 - Math.random());
-        let slice = shuffled.slice(0, 6);
-       // slice.push(new Dish("Grillen", false));
-        return slice.sort(() => 0.5 - Math.random())
-    }
     const shuffled = arr.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 7);
 }
