@@ -1,32 +1,24 @@
 import React, {useRef} from "react";
-import {Container, Table} from "semantic-ui-react";
-import {dow, uuidv4} from "../util/tools";
-import {buildDishEntry} from "../util/DishEntryBuilder";
+import {Container, GridRow} from "semantic-ui-react";
+import {dow} from "../util/tools";
 import {Dish} from "../models/Dish";
+import {DishCard} from "./DishCard";
 
 //@ts-ignore
-const WeekTable2 = ({dishes}) => {
+type Props = { dishes: Dish[] };
+const WeekTable2 = ({dishes}: Props) => {
     const ref = useRef();
     return (
         //@ts-ignore
         <div ref={ref}>
             <Container>
-                <Table celled>
-                    <Table.Header>
-                        <Table.Row>
-                            {
-                                dow.map(day => <Table.HeaderCell key={day}>{day}</Table.HeaderCell>)
-                            }
-                        </Table.Row>
-                    </Table.Header>
-                    <Table.Body>
-                        <Table.Row key={uuidv4()}>
-                            {
-                                dishes.map((thingy: Dish) => buildDishEntry(thingy))
-                            }
-                        </Table.Row>
-                    </Table.Body>
-                </Table>
+                {
+                    dow.map(day => {
+                        var index = dow.indexOf(day);
+                        var dish = dishes[index];
+                        return <DishCard  key={dish.uuid} dish={dish} weekDay={day}/>
+                    })
+                }
             </Container>
         </div>
     )
