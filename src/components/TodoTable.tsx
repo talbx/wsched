@@ -1,6 +1,6 @@
 import React from "react";
 import {Table} from "semantic-ui-react";
-import {dow} from "./tools";
+import {dow, uuidv4} from "../util/tools";
 import {weekly} from "./TodoSchedule";
 
 const TodoTable = () => {
@@ -17,7 +17,7 @@ const TodoTable = () => {
                 {
                     weekly.map(week => {
                         return (
-                            <Table.Row>
+                            <Table.Row key={uuidv4()}>
                                 <Table.Cell>
                                     {week.monday}
                                 </Table.Cell>
@@ -52,5 +52,3 @@ const TodoTable = () => {
 }
 
 export default TodoTable;
-
-const map = new Map();
