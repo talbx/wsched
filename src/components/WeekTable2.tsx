@@ -3,18 +3,20 @@ import {Container} from "semantic-ui-react";
 import {dow} from "../util/tools";
 import {Dish} from "../models/Dish";
 import {DishCard} from "./DishCard";
+import moment from "moment";
+import {getCurrentWeek} from "../util/dateUtils";
 
 //@ts-ignore
 type Props = { dishes: Dish[] };
 const WeekTable2 = ({dishes}: Props) => {
-    const ref = useRef();
+    const curs = getCurrentWeek();
     return (
         //@ts-ignore
-        <div ref={ref}>
+        <div>
             <Container>
                 {
-                    dow.map(day => {
-                        var index = dow.indexOf(day);
+                    curs.map(day => {
+                        var index = curs.indexOf(day);
                         var dish = dishes[index];
                         return <DishCard key={dish.uuid} dish={dish} weekDay={day}/>
                     })
