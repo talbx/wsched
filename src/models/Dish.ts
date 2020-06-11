@@ -66,3 +66,6 @@ export const deliveryServices: Dish[] = [
     order("Rohhäppchen", false),
     order("ReadyPizza", true)
 ];
+
+
+export const allDishesAndServices: Dish[] = [...dishes, ...deliveryServices]

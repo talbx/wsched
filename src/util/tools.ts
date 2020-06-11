@@ -1,4 +1,4 @@
-import {deliveryServices, Dish, dishes} from "../models/Dish";
+import {allDishesAndServices, deliveryServices, Dish, dishes} from "../models/Dish";
 
 var md5 = require('md5');
 
@@ -12,7 +12,7 @@ export function uuidv4(): string {
 export const regenerateDish = (previousDish: Dish): Dish => {
     const type = previousDish.type;
     const veggie = previousDish.veggie;
-    const stripped = dishes.filter(dish => dish !== previousDish && dish.veggie === veggie && dish.type === type);
+    const stripped = allDishesAndServices.filter(dish => dish !== previousDish && dish.veggie === veggie && dish.type === type);
     const shuffled = stripped.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 1)[0];
 }

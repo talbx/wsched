@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b3ff2b3-fcd6-4cc9-81ed-e385551f7556" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MenuCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MenuCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Dish.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Dish.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
