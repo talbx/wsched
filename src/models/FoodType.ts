@@ -1,4 +1,5 @@
 export enum FoodType {
     REGULAR = "REGULAR",
-    ORDER = "ORDER"
+    ORDER = "ORDER",
+    EXCEPTION = "EXCEPTION"
 }

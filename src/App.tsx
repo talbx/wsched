@@ -12,7 +12,6 @@ const App = () => {
         <Grid container style={{padding: '3em 0em'}}>
             <Container>
                 <MenuCard/>
-                <TodoCard/>
             </Container>
         </Grid>
     );

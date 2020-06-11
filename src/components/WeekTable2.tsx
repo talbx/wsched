@@ -1,9 +1,7 @@
-import React, {useRef} from "react";
+import React from "react";
 import {Container} from "semantic-ui-react";
-import {dow} from "../util/tools";
 import {Dish} from "../models/Dish";
 import {DishCard} from "./DishCard";
-import moment from "moment";
 import {getCurrentWeek} from "../util/dateUtils";
 
 //@ts-ignore
@@ -11,7 +9,6 @@ type Props = { dishes: Dish[] };
 const WeekTable2 = ({dishes}: Props) => {
     const curs = getCurrentWeek();
     return (
-        //@ts-ignore
         <div>
             <Container>
                 {

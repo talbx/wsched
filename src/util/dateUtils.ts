@@ -10,6 +10,5 @@ export const getCurrentWeek = (): Moment[] => {
     let saturday = moment().startOf('week').add(6, 'days');
     let sunday = moment().startOf('week').add(7, 'days');
 
-    let moments = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
-    return moments;
+    return [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
 }
