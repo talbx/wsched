@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b3ff2b3-fcd6-4cc9-81ed-e385551f7556" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/home/HomeComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/roadmap/RoadmapComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DishCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/DishCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MenuCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/MenuCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MenuSchedule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/MenuSchedule.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/TodoCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoSchedule.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/TodoSchedule.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/TodoTable.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
