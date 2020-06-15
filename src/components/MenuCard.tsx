@@ -1,9 +1,10 @@
 import {Button, Card, Checkbox, Container, GridRow, Header, Input} from "semantic-ui-react";
-import {generateDishes, isValidPassphrase} from "../util/tools";
-import WeekTable2 from "./WeekTable2";
+import {iVP} from "../util/tools";
+import MenuSchedule from "./MenuSchedule";
 import React, {FormEvent, useState} from "react";
 import moment from "moment";
 import {Dish} from "../models/Dish";
+import {DishesSupplier} from "../util/DishesSupplier";
 
 const MenuCard = () => {
     const [bbq, setBbq] = useState<boolean>(false)
@@ -14,7 +15,14 @@ const MenuCard = () => {
     const [validPassphrase, setValidPassphrase] = useState<boolean>(false);
 
     function generate(event: FormEvent<HTMLFormElement> | null) {
-        setDishes(generateDishes(order, veggie, bbq));
+        const generated = new DishesSupplier()
+            .withBBQ(bbq)
+            .withExceptionDishes(exceptionDishes)
+            .veggieOnly(veggie)
+            .withOrder(order)
+            .supply()
+
+        setDishes(generated);
         if (event)
             event.preventDefault();
     }
@@ -24,18 +32,18 @@ const MenuCard = () => {
             <Card.Content>
                 <Card.Header>Speiseplan</Card.Header>
                 <form onSubmit={(event) => generate(event)}>
-                    <GridRow style={{padding: '0em 1em', marginTop: '2%'}} >
+                    <GridRow style={{padding: '0em 1em', marginTop: '2%'}}>
                         <Checkbox style={{padding: '0em 1em'}} toggle onChange={() => setOrder(!order)}
                                   label="Lust essen zu bestellen? "/>
                         <Checkbox style={{padding: '0em 1em'}} toggle onChange={() => setVeggie(!veggie)}
                                   label="Vegetarische Woche? "/>
-                        <Input onChange={(event, data) => setValidPassphrase(isValidPassphrase(data.value))}
+                        <Input onChange={(event, data) => setValidPassphrase(iVP(data.value))}
                                style={{padding: '0em 1em'}}
                                size="mini" label='Passphrase' type='password'/>
                         <Button type="submit" disabled={!validPassphrase} onClick={() => generate(null)} basic
                                 color="teal">Generieren</Button>
                     </GridRow>
-                    <GridRow style={{padding: '0em 1em'}} >
+                    <GridRow style={{padding: '0em 1em'}}>
                         <Checkbox style={{padding: '0em 1em'}} toggle
                                   onChange={() => enableExceptionDishes(!exceptionDishes)}
                                   label="Exception Dishes? "/>
@@ -53,7 +61,7 @@ const MenuCard = () => {
                             moment().week()
                         }
                     </Header>
-                    <WeekTable2 dishes={dishes}/>
+                    <MenuSchedule dishes={dishes}/>
                 </Container>
             }
         </Card>

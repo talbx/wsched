@@ -6,15 +6,15 @@ import {getCurrentWeek} from "../util/dateUtils";
 
 //@ts-ignore
 type Props = { dishes: Dish[] };
-const WeekTable2 = ({dishes}: Props) => {
+const MenuSchedule = ({dishes}: Props) => {
     const curs = getCurrentWeek();
     return (
         <div>
             <Container>
                 {
                     curs.map(day => {
-                        var index = curs.indexOf(day);
-                        var dish = dishes[index];
+                        const index = curs.indexOf(day);
+                        const dish = dishes[index];
                         return <DishCard key={dish.uuid} dish={dish} weekDay={day}/>
                     })
                 }
@@ -23,4 +23,4 @@ const WeekTable2 = ({dishes}: Props) => {
     )
 };
 
-export default WeekTable2;
+export default MenuSchedule;

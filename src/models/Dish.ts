@@ -16,8 +16,8 @@ export class Dish {
 }
 
 export enum Gender {
-    FEMALE,
-    MALE
+    FEMALE = "FEMALE",
+    MALE = "MALE"
 }
 
 export class ExceptionDish extends Dish {

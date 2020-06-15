@@ -1,6 +1,6 @@
 import React from "react";
 import {Card, Label} from "semantic-ui-react";
-import {Dish} from "../models/Dish";
+import {Dish, ExceptionDish} from "../models/Dish";
 import {FoodType} from "../models/FoodType";
 import {regenerateDish} from "../util/tools";
 import {Moment} from "moment";
@@ -31,6 +31,11 @@ export const DishCard = ({dish, weekDay}: Props) => {
                         content.type === FoodType.ORDER &&
                         <Label basic className="mini" color="black">Bestellung</Label> &&
                         <Label basic className="mini" color="blue">{content.type}</Label>
+                    }
+                    {
+                        content instanceof ExceptionDish &&
+                        <Label basic className="mini" color="red">Exception Dish</Label> &&
+                        <Label basic className="mini" color="blue">{content.sex}</Label>
                     }
                     <i onClick={() => regenerate()} aria-hidden="true" className="refresh icon"/>
                 </Card.Content>
