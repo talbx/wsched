@@ -12,11 +12,17 @@ const App = () => {
     console.log(nxt1('9d3b4b2da394293d3za9d1c1d1d2b3dd'));
 
     return (
-        <Grid container style={{padding: '3em 0em'}}>
-            <Container>
-                <MenuCard/>
-            </Container>
-        </Grid>
+        <div>
+            <a href="https://github.com/talbx/wsched">
+                <div className="ribbon"><span>ALPHA</span></div>
+            </a>
+            <Grid container style={{padding: '3em 0em'}}>
+                <Container>
+                    <MenuCard/>
+                </Container>
+            </Grid>
+        </div>
+
     );
 }
 

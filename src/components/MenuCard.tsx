@@ -45,6 +45,8 @@ const MenuCard = () => {
                     </GridRow>
                     <GridRow style={{padding: '0em 1em'}}>
                         <Checkbox style={{padding: '0em 1em'}} toggle
+                                  disabled={true}
+                                  readOnly={true}
                                   onChange={() => enableExceptionDishes(!exceptionDishes)}
                                   label="Exception Dishes? "/>
                         <Checkbox style={{padding: '0em 1em'}} toggle onChange={() => setBbq(!bbq)}
