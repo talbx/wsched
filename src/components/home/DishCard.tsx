@@ -1,8 +1,8 @@
 import React from "react";
 import {Card, Label} from "semantic-ui-react";
-import {Dish, ExceptionDish} from "../models/Dish";
-import {FoodType} from "../models/FoodType";
-import {regenerateDish} from "../util/tools";
+import {Dish, ExceptionDish} from "../../models/Dish";
+import {FoodType} from "../../models/FoodType";
+import {regenerateDish} from "../../util/tools";
 import {Moment} from "moment";
 
 type Props = { dish: Dish, weekDay: Moment }; /* could also use interface */

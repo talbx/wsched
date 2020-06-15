@@ -1,6 +1,6 @@
 import React from "react";
 import {Table} from "semantic-ui-react";
-import {dow, uuidv4} from "../util/tools";
+import {dow, uuidv4} from "../../util/tools";
 import {weekly} from "./TodoSchedule";
 
 const TodoTable = () => {
