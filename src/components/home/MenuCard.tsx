@@ -74,7 +74,7 @@ const MenuCard = () => {
                 &&
                 <Container>
                     <Divider/>
-                    <Header style={{marginBottom: "5%"}} as='h2'>Speiseplan für KW
+                    <Header style={{marginBottom: "5%"}} as='h3'>Speiseplan für KW
                         {
                             moment().week()
                         }
