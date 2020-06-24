@@ -1,5 +1,6 @@
 import {Supplier} from "./Supplier";
 import {deliveryServices, Dish, dishes, exceptionDishes} from "../models/Dish";
+
 var md5 = require('md5');
 
 export interface WeekSchedule {
@@ -61,6 +62,17 @@ export class DishesSupplier implements Supplier<WeekSchedule> {
             uuid: generateHash(dishes)
         };
     }
+}
+
+export const hashToWeekSchedule = (hash: string): Dish[] => {
+    const shuffeld = dishes.sort(() => 0.5 - Math.random());
+    var tempHash = '';
+    let col = shuffeld.slice(0, 7);
+    col.forEach(dish => tempHash = tempHash + dish.uuid);
+    if (hash === tempHash) {
+        return col;
+    }
+    return hashToWeekSchedule(hash);
 }
 
 const generateHash = (dishes: Dish[]): string => {
