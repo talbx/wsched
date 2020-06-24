@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b3ff2b3-fcd6-4cc9-81ed-e385551f7556" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/MenuCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/MenuCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/MenuSchedule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/MenuSchedule.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/tools.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/tools.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/DishesSupplier.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/DishesSupplier.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -145,11 +144,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="271" y="186" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900@0.0.1440.900" timestamp="1591609211466" />
-    <state x="426" y="216" width="588" height="501" key="find.popup" timestamp="1593031394197">
+    <state x="426" y="216" width="588" height="501" key="find.popup" timestamp="1593031724159">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
     <state x="426" y="207" width="588" height="538" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1589787891074" />
-    <state x="426" y="216" width="588" height="501" key="find.popup/0.23.1440.837@0.23.1440.837" timestamp="1593031394197" />
+    <state x="426" y="216" width="588" height="501" key="find.popup/0.23.1440.837@0.23.1440.837" timestamp="1593031724159" />
     <state x="385" y="205" width="670" height="629" key="search.everywhere.popup" timestamp="1592236242500">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
@@ -181,7 +180,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/util/DishesSupplier.ts</url>
-          <line>52</line>
+          <line>58</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

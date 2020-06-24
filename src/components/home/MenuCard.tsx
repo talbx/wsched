@@ -4,7 +4,7 @@ import MenuSchedule from "./MenuSchedule";
 import React, {FormEvent, useState} from "react";
 import moment from "moment";
 import {Dish} from "../../models/Dish";
-import {DishesSupplier} from "../../util/DishesSupplier";
+import {DishesSupplier, WeekSchedule} from "../../util/DishesSupplier";
 
 const MenuCard = () => {
     const [bbq, setBbq] = useState<boolean>(false)
@@ -13,16 +13,17 @@ const MenuCard = () => {
     const [dishes, setDishes] = useState<Dish[]>([]);
     const [exceptionDishes, enableExceptionDishes] = useState<boolean>(false);
     const [validPassphrase, setValidPassphrase] = useState<boolean>(true);
-
+    const [uuid, setUuid] = useState<string>('');
     function generate(event: FormEvent<HTMLFormElement> | null) {
-        const generated = new DishesSupplier()
+        const generated: WeekSchedule = new DishesSupplier()
             .withBBQ(bbq)
             .withExceptionDishes(exceptionDishes)
             .veggieOnly(veggie)
             .withOrder(order)
             .supply()
 
-        setDishes(generated);
+        setDishes(generated.dishes);
+        setUuid(generated.uuid);
         if (event)
             event.preventDefault();
     }
@@ -74,11 +75,12 @@ const MenuCard = () => {
                 &&
                 <Container>
                     <Divider/>
-                    <Header style={{marginBottom: "5%"}} as='h2'>Speiseplan für KW
+                    <Header as='h2'>Speiseplan für KW
                         {
                             moment().week()
                         }
                     </Header>
+                    <Header style={{marginBottom: "5%"}} as='h5'>ID: {uuid}</Header>
                     <MenuSchedule dishes={dishes}/>
                     <Button style={{marginTop: "2%"}} fluid color="teal" onClick={() => generateJPEG()}>Export to JPEG</Button>
                 </Container>

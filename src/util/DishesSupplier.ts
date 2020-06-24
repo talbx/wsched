@@ -1,7 +1,13 @@
 import {Supplier} from "./Supplier";
 import {deliveryServices, Dish, dishes, exceptionDishes} from "../models/Dish";
+var md5 = require('md5');
 
-export class DishesSupplier implements Supplier<Dish[]> {
+export interface WeekSchedule {
+    dishes: Dish[],
+    uuid: string
+}
+
+export class DishesSupplier implements Supplier<WeekSchedule> {
     private withOrder_ = false;
     private veggieOnly_ = false;
     private exceptionDishes_ = false;
@@ -27,7 +33,7 @@ export class DishesSupplier implements Supplier<Dish[]> {
         return this;
     }
 
-    supply(): Dish[] {
+    supply(): WeekSchedule {
         const arr: any[] = [];
         if (this.withBbq_ && !this.veggieOnly_) {
             arr.push(dishes.find(dish => dish.name === 'Grillen'));
@@ -50,6 +56,15 @@ export class DishesSupplier implements Supplier<Dish[]> {
         }
 
         const shuffled = arr.sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, 7);
+        return {
+            dishes: shuffled.slice(0, 7),
+            uuid: generateHash(dishes)
+        };
     }
+}
+
+const generateHash = (dishes: Dish[]): string => {
+    var toBehashed = '';
+    dishes.forEach(dish => toBehashed = toBehashed + dish.uuid)
+    return md5(toBehashed);
 }

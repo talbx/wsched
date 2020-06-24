@@ -6,6 +6,7 @@ import {BrowserRouter, Link, Route, Switch} from "react-router-dom";
 import {HomeComponent} from "./components/home/HomeComponent";
 import {RoadmapComponent} from "./components/roadmap/RoadmapComponent";
 import {Menu} from "semantic-ui-react";
+import {Footer} from "./Footer";
 
 const App = () => {
 
