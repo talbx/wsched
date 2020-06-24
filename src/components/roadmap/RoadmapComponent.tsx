@@ -23,9 +23,13 @@ export const RoadmapComponent = () => {
     return (
         <div style={{display: "flex"}}>
             <Container>
-                <Segment>
-                    <Step.Group items={steps}/>
-                </Segment>
+                {
+                    (false &&
+                        <Segment>
+                            <Step.Group items={steps}/>
+                        </Segment>) ||
+                    (<h1>coming soon</h1>)
+                }
             </Container>
         </div>
     );

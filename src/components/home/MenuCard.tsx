@@ -1,5 +1,5 @@
 import {Button, Card, Checkbox, Container, Divider, Grid, Header, Input} from "semantic-ui-react";
-import {iVP} from "../../util/tools";
+import {generateJPEG, iVP} from "../../util/tools";
 import MenuSchedule from "./MenuSchedule";
 import React, {FormEvent, useState} from "react";
 import moment from "moment";
@@ -80,6 +80,7 @@ const MenuCard = () => {
                         }
                     </Header>
                     <MenuSchedule dishes={dishes}/>
+                    <Button style={{marginTop: "2%"}} fluid color="teal" onClick={() => generateJPEG()}>Export to JPEG</Button>
                 </Container>
             }
         </Card>

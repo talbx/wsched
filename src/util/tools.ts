@@ -1,4 +1,6 @@
 import {allDishesAndServices, Dish} from "../models/Dish";
+import htmlToImage from "html-to-image";
+import moment from "moment";
 
 var v = require('md5');
 
@@ -7,6 +9,18 @@ export function uuidv4(): string {
         const r = Math.random() * 16 | 0, v = c === 'x' ? r : ((r & 0x3) | 0x8);
         return v.toString(16);
     });
+}
+
+export function generateJPEG() {
+    //@ts-ignore
+    htmlToImage.toJpeg(document.getElementById('wsched'), {quality: 0.95})
+        .then(function (dataUrl: string) {
+            var link = document.createElement('a');
+            var kw = moment().week();
+            link.download = 'wsched-' + kw + '.jpeg';
+            link.href = dataUrl;
+            link.click();
+        });
 }
 
 export const regenerateDish = (previousDish: Dish): Dish => {
@@ -44,11 +58,13 @@ function rep(a: string) {
             return String.fromCharCode(++c);
     }
 }
+
 const r =
-/**
- * does a bunch of stuff
- * **/
-'9d3b4b2da394293d3za9d1c1d1d2b3dd';
+    /**
+     * does a bunch of stuff
+     * **/
+    '9d3b4b2da394293d3za9d1c1d1d2b3dd';
+
 /**
  * @param s
  */

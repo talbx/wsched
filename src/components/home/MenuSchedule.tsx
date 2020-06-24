@@ -1,15 +1,17 @@
 import React from "react";
-import {Container, Grid} from "semantic-ui-react";
+import {Button, Container, Grid} from "semantic-ui-react";
 import {Dish} from "../../models/Dish";
 import {DishCard} from "./DishCard";
 import {getCurrentWeek} from "../../util/dateUtils";
+import htmlToImage from 'html-to-image';
+import {generateJPEG} from "../../util/tools";
 
 //@ts-ignore
 type Props = { dishes: Dish[] };
 const MenuSchedule = ({dishes}: Props) => {
     const curs = getCurrentWeek();
     return (
-        <div>
+        <div id="wsched">
             <Container>
                 <Grid>
                     {
