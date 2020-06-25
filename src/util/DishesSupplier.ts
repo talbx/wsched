@@ -78,5 +78,7 @@ export const hashToWeekSchedule = (hash: string): Dish[] => {
 const generateHash = (dishes: Dish[]): string => {
     var toBehashed = '';
     dishes.forEach(dish => toBehashed = toBehashed + dish.uuid)
-    return md5(toBehashed);
+    let md = md5(toBehashed);
+    console.log('md5 length', md.length);
+    return md;
 }

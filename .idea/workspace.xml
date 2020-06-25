@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8b3ff2b3-fcd6-4cc9-81ed-e385551f7556" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/MenuCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/MenuCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/DishesSupplier.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/DishesSupplier.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,11 +148,11 @@
     </state>
     <state x="426" y="207" width="588" height="538" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1589787891074" />
     <state x="426" y="216" width="588" height="501" key="find.popup/0.23.1440.837@0.23.1440.837" timestamp="1593031724159" />
-    <state x="385" y="205" width="670" height="629" key="search.everywhere.popup" timestamp="1592236242500">
+    <state x="385" y="205" width="670" height="629" key="search.everywhere.popup" timestamp="1593069359399">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1591603517276" />
-    <state x="385" y="205" width="670" height="629" key="search.everywhere.popup/0.23.1440.837@0.23.1440.837" timestamp="1592236242500" />
+    <state x="385" y="205" width="670" height="629" key="search.everywhere.popup/0.23.1440.837@0.23.1440.837" timestamp="1593069359399" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -177,7 +179,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/util/DishesSupplier.ts</url>
-          <line>60</line>
+          <line>59</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

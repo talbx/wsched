@@ -6,7 +6,6 @@ import {BrowserRouter, Link, Route, Switch} from "react-router-dom";
 import {HomeComponent} from "./components/home/HomeComponent";
 import {RoadmapComponent} from "./components/roadmap/RoadmapComponent";
 import {Menu} from "semantic-ui-react";
-import {Footer} from "./Footer";
 
 const App = () => {
 
@@ -18,7 +17,7 @@ const App = () => {
                 <Menu.Item
                     name='Home'
                     active={active === 'home'}>
-                    <Link style={{color: 'black'}} to="/" onClick={() => setActive('home')}>Home</Link>
+                    <Link style={{color: 'black'}} to="/" onClick={() => setActive('home')}>Wochenplan Generator</Link>
                 </Menu.Item>
                 <Menu.Item
                     name='Roadmap'
