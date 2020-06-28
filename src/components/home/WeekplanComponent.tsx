@@ -1,13 +1,13 @@
 import {Container, Grid} from "semantic-ui-react";
-import MenuCard from "./MenuCard";
+import WeekplanCard from "./WeekplanCard";
 import React from "react";
 
-export const HomeComponent = ()  => {
+export const WeekplanComponent = ()  => {
 
     return (
         <Grid container style={{padding: '3em 0em'}}>
             <Container>
-                <MenuCard/>
+                <WeekplanCard/>
             </Container>
         </Grid>
     );

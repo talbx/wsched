@@ -5,7 +5,7 @@ import {FoodType} from "../../models/FoodType";
 import {regenerateDish} from "../../util/tools";
 import {Moment} from "moment";
 
-type Props = { dish: Dish, weekDay: Moment }; /* could also use interface */
+type Props = { dish: Dish, weekDay: Moment };
 
 export const DishCard = ({dish, weekDay}: Props) => {
 
@@ -15,7 +15,6 @@ export const DishCard = ({dish, weekDay}: Props) => {
         let newDish = regenerateDish(content);
         setContent(newDish);
     };
-
 
     return (
         <div style={{marginBottom: "2%"}}>

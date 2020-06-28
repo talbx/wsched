@@ -1,20 +1,20 @@
-import {Button, Card, Checkbox, Container, Divider, Grid, Header, Input} from "semantic-ui-react";
-import {generateJPEG, iVP} from "../../util/tools";
-import MenuSchedule from "./MenuSchedule";
+import {Button, Card, Checkbox, Divider, Grid, Input} from "semantic-ui-react";
+import {iVP} from "../../util/tools";
 import React, {FormEvent, useState} from "react";
-import moment from "moment";
 import {Dish} from "../../models/Dish";
-import {DishesSupplier, hashToWeekSchedule, WeekSchedule} from "../../util/DishesSupplier";
+import {DishesSupplier, WeekSchedule} from "../../util/DishesSupplier";
+import {RestoreForm} from "./RestoreForm";
+import {DishesContainerCard} from "./DishesContainerCard";
 
-const MenuCard = () => {
+const WeekplanCard = () => {
     const [bbq, setBbq] = useState<boolean>(false)
     const [order, setOrder] = useState<boolean>(false)
     const [veggie, setVeggie] = useState<boolean>(false)
     const [dishes, setDishes] = useState<Dish[]>([]);
     const [exceptionDishes, enableExceptionDishes] = useState<boolean>(false);
     const [validPassphrase, setValidPassphrase] = useState<boolean>(true);
-    const [uuid, setUuid] = useState<string>('');
-    const [validUuid, setValidUuid] = useState<boolean>(false);
+    const [key, setKey] = useState<string>('');
+    const [isRestored, setRestore] = useState<boolean>(false);
 
     function generate(event: FormEvent<HTMLFormElement> | null) {
         const generated: WeekSchedule = new DishesSupplier()
@@ -25,13 +25,9 @@ const MenuCard = () => {
             .supply()
 
         setDishes(generated.dishes);
-        setUuid(generated.uuid);
+        setKey(generated.uuid);
         if (event)
             event.preventDefault();
-    }
-
-    function decodeId(event: React.FormEvent<HTMLFormElement> | null) {
-        hashToWeekSchedule(uuid)
     }
 
     return (
@@ -40,7 +36,7 @@ const MenuCard = () => {
                 <Card.Content>
                     <Grid columns={2}>
                         <Grid.Column>
-                            <Card.Header as='h2'>Wochenplan Generator</Card.Header>
+                            <Card.Header as='h2'>Wochenplan generieren</Card.Header>
                             <form onSubmit={(event) => generate(event)}>
                                 <Grid container columns={2}>
                                     <Grid style={{marginTop: "2%"}} container columns={2} stackable>
@@ -62,7 +58,8 @@ const MenuCard = () => {
                                                       label="Exception Dishes? "/>
                                         </Grid.Column>
                                         <Grid.Column>
-                                            <Checkbox style={{padding: '0em 1em'}} toggle onChange={() => setBbq(!bbq)}
+                                            <Checkbox style={{padding: '0em 1em'}} toggle
+                                                      onChange={() => setBbq(!bbq)}
                                                       label="Grillwetter? "/>
                                         </Grid.Column>
                                         <Grid.Column>
@@ -81,23 +78,7 @@ const MenuCard = () => {
                                 </Grid>
                             </form>
                         </Grid.Column>
-                        <Grid.Column>
-                            <Card.Header as='h2'>Wochenplan wiederherstellen</Card.Header>
-                            <form onSubmit={(event) => decodeId(event)}>
-                                <Grid columns="equal">
-                                    <Grid.Column>
-                                        <Input onChange={(event, data) => setValidUuid(data.value.length === 32)}
-                                               icon='key' placeholder='Enter wsched Hash'/>
-                                    </Grid.Column>
-                                    <Grid.Column>
-                                        <Button type="submit" disabled={!validUuid} onClick={() => decodeId(null)}
-                                                basic
-                                                color="teal">Wiederherstellen
-                                        </Button>
-                                    </Grid.Column>
-                                </Grid>
-                            </form>
-                        </Grid.Column>
+                        <RestoreForm scheduleKey={key} keyFn={setKey} dishesCallback={setDishes} restoreFlag={setRestore}/>
                     </Grid>
                     <Divider vertical>ODER</Divider>
                 </Card.Content>
@@ -105,22 +86,10 @@ const MenuCard = () => {
             {
                 dishes.length !== 0
                 &&
-                <Card fluid color="teal" style={{padding: '1em 0em'}}>
-                    <Container>
-                        <Header as='h2'>Speiseplan für KW
-                            {
-                                moment().week()
-                            }
-                        </Header>
-                        <Header style={{marginBottom: "5%"}} as='h5'>ID: {uuid}</Header>
-                        <MenuSchedule dishes={dishes}/>
-                        <Button style={{marginTop: "2%"}} fluid color="teal" onClick={() => generateJPEG()}>Export to
-                            JPEG</Button>
-                    </Container>
-                </Card>
+                <DishesContainerCard dishes={dishes} scheduleKey={key} restored={isRestored}/>
             }
         </div>
     )
 };
 
-export default MenuCard;
+export default WeekplanCard;

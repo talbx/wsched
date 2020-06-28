@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'semantic-ui-css/semantic.min.css'
 import {BrowserRouter, Link, Route, Switch} from "react-router-dom";
-import {HomeComponent} from "./components/home/HomeComponent";
+import {WeekplanComponent} from "./components/home/WeekplanComponent";
 import {RoadmapComponent} from "./components/roadmap/RoadmapComponent";
 import {Menu} from "semantic-ui-react";
 
@@ -17,7 +17,7 @@ const App = () => {
                 <Menu.Item
                     name='Home'
                     active={active === 'home'}>
-                    <Link style={{color: 'black'}} to="/" onClick={() => setActive('home')}>Wochenplan Generator</Link>
+                    <Link style={{color: 'black'}} to="/wsched" onClick={() => setActive('home')}>Wochenplan</Link>
                 </Menu.Item>
                 <Menu.Item
                     name='Roadmap'
@@ -33,8 +33,8 @@ const App = () => {
                     <Route path="/roadmap">
                         <RoadmapComponent/>
                     </Route>
-                    <Route path="/">
-                        <HomeComponent/>
+                    <Route path="/wsched">
+                        <WeekplanComponent/>
                     </Route>
                 </Switch>
             </div>

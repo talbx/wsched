@@ -57,28 +57,26 @@ export class DishesSupplier implements Supplier<WeekSchedule> {
         }
 
         const shuffled = arr.sort(() => 0.5 - Math.random());
+        let selection = shuffled.slice(0, 7);
         return {
-            dishes: shuffled.slice(0, 7),
-            uuid: generateHash(dishes)
+            dishes: selection,
+            uuid: generateKey(selection)
         };
     }
 }
 
-export const hashToWeekSchedule = (hash: string): Dish[] => {
-    const shuffeld = dishes.sort(() => 0.5 - Math.random());
-    var tempHash = '';
-    let col = shuffeld.slice(0, 7);
-    col.forEach(dish => tempHash = tempHash + dish.uuid);
-    if (hash === tempHash) {
-        return col;
-    }
-    return hashToWeekSchedule(hash);
+export const keyToSchedule = (key: string): WeekSchedule => {
+    let match = key.match(new RegExp('.{1,' + 4 + '}', 'g'));
+    var result = dishes.filter(dish => match?.includes(dish.uuid.substring(0, 4)));
+    console.log("result", result);
+    return {
+        dishes: result,
+        uuid: key
+    };
 }
-
-const generateHash = (dishes: Dish[]): string => {
-    var toBehashed = '';
-    dishes.forEach(dish => toBehashed = toBehashed + dish.uuid)
-    let md = md5(toBehashed);
-    console.log('md5 length', md.length);
-    return md;
+const generateKey = (dishes: Dish[]): string => {
+    var key = '';
+    dishes.forEach(dish => key = key + dish.uuid.substring(0, 4))
+    console.log('key generated', key, key.length);
+    return key;
 }
