@@ -1,5 +1,6 @@
 import {uuidv4} from "../util/tools";
 import {FoodType} from "./FoodType";
+var md5 = require('md5');
 
 export class Dish {
     name: string;
@@ -9,9 +10,9 @@ export class Dish {
 
     constructor(name: string, veggie: boolean, type: FoodType) {
         this.name = name;
-        this.uuid = uuidv4();
         this.veggie = veggie;
         this.type = type;
+        this.uuid = md5(name + veggie + type);
     }
 }
 
@@ -89,7 +90,6 @@ export const deliveryServices: Dish[] = [
     order("Kirat", true),
     order("Irodion", false),
     order("BurgerMe", false),
-    order("Kirat", true),
     order("Rohhäppchen", false),
     order("ReadyPizza", true)
 ];

@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b3ff2b3-fcd6-4cc9-81ed-e385551f7556" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/home/DishesContainerCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/home/RestoreForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/combinations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/DishCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/DishCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/HomeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/WeekplanComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/MenuCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/WeekplanCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/MenuSchedule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/DishesContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/TodoCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todos/TodoCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/TodoSchedule.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todos/TodoSchedule.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/TodoTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todos/TodoTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/DishesContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/DishesContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/WeekplanCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/WeekplanCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Dish.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Dish.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/DishesSupplier.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/DishesSupplier.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +63,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="320" y="89" key="#Plugins" timestamp="1593359686370">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state x="320" y="89" key="#Plugins/0.23.1440.837@0.23.1440.837" timestamp="1593359686370" />
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591609052132">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -157,11 +153,11 @@
     </state>
     <state x="426" y="207" width="588" height="538" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1589787891074" />
     <state x="426" y="216" width="588" height="501" key="find.popup/0.23.1440.837@0.23.1440.837" timestamp="1593031724159" />
-    <state x="385" y="205" width="670" height="629" key="search.everywhere.popup" timestamp="1593069359399">
+    <state x="385" y="205" width="670" height="629" key="search.everywhere.popup" timestamp="1593359061215">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1591603517276" />
-    <state x="385" y="205" width="670" height="629" key="search.everywhere.popup/0.23.1440.837@0.23.1440.837" timestamp="1593069359399" />
+    <state x="385" y="205" width="670" height="629" key="search.everywhere.popup/0.23.1440.837@0.23.1440.837" timestamp="1593359061215" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -188,13 +184,25 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/util/DishesSupplier.ts</url>
-          <line>60</line>
+          <line>59</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/util/tools.ts</url>
           <line>50</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/home/DishesContainer.tsx</url>
+          <line>26</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/util/DishesSupplier.ts</url>
+          <line>72</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

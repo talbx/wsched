@@ -1,5 +1,5 @@
 import {Supplier} from "./Supplier";
-import {deliveryServices, Dish, dishes, exceptionDishes} from "../models/Dish";
+import {allDishesAndServices, deliveryServices, Dish, dishes, exceptionDishes} from "../models/Dish";
 
 var md5 = require('md5');
 
@@ -66,11 +66,12 @@ export class DishesSupplier implements Supplier<WeekSchedule> {
 }
 
 export const keyToSchedule = (key: string): WeekSchedule => {
+    console.log("restoring wsched with key", key);
     let match = key.match(new RegExp('.{1,' + 4 + '}', 'g'));
-    var result = dishes.filter(dish => match?.includes(dish.uuid.substring(0, 4)));
-    console.log("result", result);
+    var result = allDishesAndServices.filter(dish => match?.includes(dish.uuid.substring(0, 4)));
+    const shuffled = result.sort(() => 0.5 - Math.random());
     return {
-        dishes: result,
+        dishes: shuffled,
         uuid: key
     };
 }

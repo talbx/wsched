@@ -23,6 +23,7 @@ const DishesContainer = ({dishes}: Props) => {
 };
 
 const createDishCard = (day: Moment, curs: Moment[], dishes: Dish[]) => {
+    console.log("DISCH", dishes);
     const index = curs.indexOf(day);
     const dish = dishes[index];
     return <DishCard key={dish.uuid} dish={dish} weekDay={day}/>;

@@ -24,6 +24,7 @@ const WeekplanCard = () => {
             .withOrder(order)
             .supply()
 
+        setDishes([]);
         setDishes(generated.dishes);
         setKey(generated.uuid);
         if (event)
