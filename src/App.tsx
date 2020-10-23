@@ -19,11 +19,12 @@ const App = () => {
                     active={active === 'home'}>
                     <Link style={{color: 'black'}} to="/wsched" onClick={() => setActive('home')}>Wochenplan</Link>
                 </Menu.Item>
-                <Menu.Item
+                { false &&
+              <Menu.Item disabled={true}
                     name='Roadmap'
                     active={active === 'roadmap'}>
                     <Link style={{color: 'black'}} to="/roadmap" onClick={() => setActive('roadmap')}>Roadmap</Link>
-                </Menu.Item>
+                </Menu.Item>}
             </Menu>
             <a href="https://github.com/talbx/wsched">
                 <div className="ribbon"><span>BETA</span></div>
@@ -34,6 +35,9 @@ const App = () => {
                         <RoadmapComponent/>
                     </Route>
                     <Route path="/wsched">
+                        <WeekplanComponent/>
+                    </Route>
+                    <Route path="/">
                         <WeekplanComponent/>
                     </Route>
                 </Switch>

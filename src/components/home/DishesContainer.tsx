@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Grid, Message, Placeholder} from "semantic-ui-react";
+import {Container, Grid, Message} from "semantic-ui-react";
 import {Dish} from "../../models/Dish";
 import {DishCard} from "./DishCard";
 import {getCurrentWeek} from "../../util/dateUtils";
@@ -7,7 +7,6 @@ import {Moment} from "moment";
 import {regenerateDish} from "../../util/tools";
 import {CorruptionCard} from "./CorruptionCard";
 
-//@ts-ignore
 type Props = { dishes: Dish[], callback: (old: Dish, newDish: Dish) => void };
 const DishesContainer = ({dishes, callback}: Props) => {
 
@@ -41,14 +40,14 @@ const DishesContainer = ({dishes, callback}: Props) => {
                     </div>
                 }
                 <Grid>
-                    {dishes.length !== 0 &&
-                    curs.map(day => createDishCard(day, curs, dishes))
+                    {
+                        dishes.length !== 0 &&
+                        curs.map(day => createDishCard(day, curs, dishes))
                     }
                 </Grid>
             </Container>
         </div>
     )
 };
-
 
 export default DishesContainer;
