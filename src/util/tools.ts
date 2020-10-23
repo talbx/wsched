@@ -23,10 +23,12 @@ export function generateJPEG() {
         });
 }
 
-export const regenerateDish = (previousDish: Dish): Dish => {
+export const regenerateDish = (previousDish: Dish, weekDishes: Dish[]): Dish => {
     const type = previousDish.type;
     const veggie = previousDish.veggie;
-    const stripped = allDishesAndServices.filter(dish => dish !== previousDish && dish.veggie === veggie && dish.type === type);
+    const stripped = allDishesAndServices.filter(dish => {
+        return dish !== previousDish && dish.veggie === veggie && dish.type === type && !weekDishes.includes(dish)
+    });
     const shuffled = stripped.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 1)[0];
 }

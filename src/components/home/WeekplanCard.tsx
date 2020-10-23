@@ -2,7 +2,7 @@ import {Button, Card, Checkbox, Divider, Grid, Input} from "semantic-ui-react";
 import {iVP} from "../../util/tools";
 import React, {FormEvent, useState} from "react";
 import {Dish} from "../../models/Dish";
-import {DishesSupplier, WeekSchedule} from "../../util/DishesSupplier";
+import {DishesSupplier, generateKey, WeekSchedule} from "../../util/DishesSupplier";
 import {RestoreForm} from "./RestoreForm";
 import {DishesContainerCard} from "./DishesContainerCard";
 
@@ -15,6 +15,12 @@ const WeekplanCard = () => {
     const [validPassphrase, setValidPassphrase] = useState<boolean>(true);
     const [key, setKey] = useState<string>('');
     const [isRestored, setRestore] = useState<boolean>(false);
+
+
+    const regenerateKeys = (d1:Dish, d2: Dish) => {
+        let updatedDishes = dishes.map(d => d === d1 ? d2 : d);
+        setKey(generateKey(updatedDishes));
+    }
 
     function generate(event: FormEvent<HTMLFormElement> | null) {
         const generated: WeekSchedule = new DishesSupplier()
@@ -87,7 +93,7 @@ const WeekplanCard = () => {
             {
                 dishes.length !== 0
                 &&
-                <DishesContainerCard dishes={dishes} scheduleKey={key} restored={isRestored}/>
+                <DishesContainerCard callback={(old, newDish) => regenerateKeys(old,newDish)} dishes={dishes} scheduleKey={key} restored={isRestored}/>
             }
         </div>
     )

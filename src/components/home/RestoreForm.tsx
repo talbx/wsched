@@ -3,14 +3,16 @@ import React, {useState} from "react";
 import {keyToSchedule} from "../../util/DishesSupplier";
 import {Dish} from "../../models/Dish";
 
-
 type RestoreFormParam = { scheduleKey: string, keyFn: (a: string) => void, dishesCallback: (f: Dish[]) => void, restoreFlag: (f: boolean) => void };
 export const RestoreForm = (param: RestoreFormParam) => {
     const [validKey, setValidKey] = useState<boolean>(false);
 
     function decodeId(event: React.FormEvent<HTMLFormElement> | null) {
         const restoredSchedule = keyToSchedule(param.scheduleKey);
-        if(null !== restoredSchedule && restoredSchedule.dishes){
+        console.log(restoredSchedule);
+        console.log(param.scheduleKey);
+        console.log("DISHES LENGTH restored: ", restoredSchedule.dishes.length)
+        if(restoredSchedule.dishes){
             param.dishesCallback(restoredSchedule.dishes);
             param.restoreFlag(true);
         }

@@ -1,8 +1,6 @@
 import {Supplier} from "./Supplier";
 import {allDishesAndServices, deliveryServices, Dish, dishes, exceptionDishes} from "../models/Dish";
 
-var md5 = require('md5');
-
 export interface WeekSchedule {
     dishes: Dish[],
     uuid: string
@@ -65,19 +63,26 @@ export class DishesSupplier implements Supplier<WeekSchedule> {
     }
 }
 
+// broken key: 5fca158cdccc457c5fcad68fcba4
+// workin key: b3a8aca30313b565b27bdccc0e57
 export const keyToSchedule = (key: string): WeekSchedule => {
     console.log("restoring wsched with key", key);
     let match = key.match(new RegExp('.{1,' + 4 + '}', 'g'));
-    var result = allDishesAndServices.filter(dish => match?.includes(dish.uuid.substring(0, 4)));
+    console.log(match);
+    var result = allDishesAndServices.filter(dish => {
+        let includes = match?.includes(dish.uuid.substring(0, 4));
+        console.log("found dish for uuid: ", includes);
+        return includes;
+    });
+    console.log("restore result size", result.length);
     const shuffled = result.sort(() => 0.5 - Math.random());
     return {
         dishes: shuffled,
         uuid: key
     };
 }
-const generateKey = (dishes: Dish[]): string => {
+export const generateKey = (dishes: Dish[]): string => {
     var key = '';
     dishes.forEach(dish => key = key + dish.uuid.substring(0, 4))
-    console.log('key generated', key, key.length);
     return key;
 }

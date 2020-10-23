@@ -43,9 +43,7 @@ const TodoTable = () => {
                         )
                     })
                 }
-                <Table.Row>
-
-                </Table.Row>
+                <Table.Row/>
             </Table.Body>
         </Table>
     )

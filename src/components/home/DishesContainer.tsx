@@ -4,10 +4,27 @@ import {Dish} from "../../models/Dish";
 import {DishCard} from "./DishCard";
 import {getCurrentWeek} from "../../util/dateUtils";
 import {Moment} from "moment";
+import {regenerateDish} from "../../util/tools";
 
 //@ts-ignore
-type Props = { dishes: Dish[] };
-const DishesContainer = ({dishes}: Props) => {
+type Props = { dishes: Dish[], callback: (old: Dish, newDish: Dish) => void };
+const DishesContainer = ({dishes, callback}: Props) => {
+
+    const createDishCard = (day: Moment, curs: Moment[], dishes: Dish[]) => {
+        const dish = dishes[curs.indexOf(day)];
+        return <DishCard recreateWeekKeyCallback={callback}
+                         recreateCommand={recreateOne}
+                         key={dish.uuid}
+                         dish={dish}
+                         weekDay={day}/>;
+    }
+
+    const recreateOne = (dish: Dish): Dish => {
+        let newDish = regenerateDish(dish, dishes);
+        dishes.filter(d => d !== dish).push(newDish);
+        return newDish;
+    }
+
     const curs = getCurrentWeek();
     return (
         <div id="wsched">
@@ -22,11 +39,5 @@ const DishesContainer = ({dishes}: Props) => {
     )
 };
 
-const createDishCard = (day: Moment, curs: Moment[], dishes: Dish[]) => {
-    console.log("DISCH", dishes);
-    const index = curs.indexOf(day);
-    const dish = dishes[index];
-    return <DishCard key={dish.uuid} dish={dish} weekDay={day}/>;
-}
 
 export default DishesContainer;

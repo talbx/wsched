@@ -2,18 +2,18 @@ import React from "react";
 import {Card, Label} from "semantic-ui-react";
 import {Dish, ExceptionDish} from "../../models/Dish";
 import {FoodType} from "../../models/FoodType";
-import {regenerateDish} from "../../util/tools";
 import {Moment} from "moment";
 
-type Props = { dish: Dish, weekDay: Moment };
+type Props = { dish: Dish, weekDay: Moment, recreateWeekKeyCallback: (old: Dish, newDish: Dish) => void, recreateCommand: (dish: Dish) => Dish };
 
-export const DishCard = ({dish, weekDay}: Props) => {
+export const DishCard = ({dish, weekDay, recreateWeekKeyCallback, recreateCommand}: Props) => {
 
-    const [content, setContent] = React.useState<Dish>(dish)
+    const [content, setContent] = React.useState<Dish>(dish);
 
-    const regenerate = () => {
-        let newDish = regenerateDish(content);
+    const regenerate = (dish: Dish) => {
+        const newDish = recreateCommand(content);
         setContent(newDish);
+        recreateWeekKeyCallback(dish, newDish);
     };
 
     return (
@@ -36,7 +36,7 @@ export const DishCard = ({dish, weekDay}: Props) => {
                         <Label basic className="mini" color="red">Exception Dish</Label> &&
                         <Label basic className="mini" color="blue">{content.sex}</Label>
                     }
-                    <i onClick={() => regenerate()} aria-hidden="true" className="refresh icon"/>
+                    <i onClick={() => regenerate(dish)} aria-hidden="true" className="refresh icon"/>
                 </Card.Content>
             </Card>
         </div>

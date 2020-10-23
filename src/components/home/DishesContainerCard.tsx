@@ -5,7 +5,7 @@ import {generateJPEG} from "../../util/tools";
 import React from "react";
 import {Dish} from "../../models/Dish";
 
-type DishesContainerCardParam = {dishes: Dish[], scheduleKey: string, restored: boolean}
+type DishesContainerCardParam = {dishes: Dish[], scheduleKey: string, restored: boolean, callback: (old: Dish, newDish: Dish) => void}
 export const DishesContainerCard = (param: DishesContainerCardParam) => {
     return (
         <Card fluid color="teal" style={{padding: '1em 0em'}}>
@@ -24,7 +24,7 @@ export const DishesContainerCard = (param: DishesContainerCardParam) => {
                     )
                 }
                 <Header style={{marginBottom: "5%"}} as='h5'>Key: {param.scheduleKey}</Header>
-                <DishesContainer dishes={param.dishes}/>
+                <DishesContainer callback={param.callback} dishes={param.dishes}/>
                 <Button style={{marginTop: "2%"}} fluid color="teal" onClick={() => generateJPEG()}>Export to
                     JPEG</Button>
             </Container>

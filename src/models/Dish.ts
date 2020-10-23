@@ -1,5 +1,5 @@
-import {uuidv4} from "../util/tools";
 import {FoodType} from "./FoodType";
+
 var md5 = require('md5');
 
 export class Dish {
@@ -13,6 +13,7 @@ export class Dish {
         this.veggie = veggie;
         this.type = type;
         this.uuid = md5(name + veggie + type);
+        console.log("created dish " + this.name + " with uuid " + this.uuid);
     }
 }
 
@@ -56,34 +57,34 @@ const exceptionDish = (name: string, veggie: boolean, gender: Gender) => {
 }
 
 export const dishes: Dish[] = [
-    regularDish("Carbonara", false),
+    regularDish("Auflauf", true),
     regularDish("Bolo", false),
+    regularDish("Brot mit Aufschnitt", true),
+    regularDish("Carbonara", false),
+    regularDish("Chili con carne", false),
+    regularDish("Flammkuchen", false),
+    regularDish("Gemüsepfanne", true),
+    regularDish("Gulasch", false),
+    regularDish("Grillen", false),
+    regularDish("Hühnerfrikassee", false),
     regularDish("Pizza", true),
     regularDish("Normales Reiscurry", true),
-    regularDish("Pfannkuchen", true),
-    regularDish("Flammkuchen", false),
-    regularDish("Brot mit Aufschnitt", true),
-    regularDish("Tomatencreme Suppe", true),
     regularDish("Nudeln mit Sahne sauce", true),
-    regularDish("Auflauf", true),
+    regularDish("Pfannkuchen", true),
+    regularDish("Risotto", true),
     regularDish("Süßes Ananas Reis Curry", true),
     regularDish("Salat", true),
-    regularDish("Gulasch", false),
-    regularDish("Chili con carne", false),
-    regularDish("Geflügel-Reis Salat (Glutenfreies Kochbuch)", false),
-    regularDish("Exotische Mörensuppe (Glutenfreies Kochbuch)", true),
-    regularDish("Kokos-Curry (Glutenfreies Kochbuch)", true),
+    regularDish("Tomatencreme Suppe", true),
     regularDish("Buntes Gemüse-Tortilla (Glutenfreies Kochbuch)", true),
-    regularDish("Rote Linsen mit Schafskäse (Glutenfreies Kochbuch)", true),
-    regularDish("Risotto", true),
+    regularDish("Exotische Mörensuppe (Glutenfreies Kochbuch)", true),
     regularDish("Fischfilet mit Kräuterkruste (Glutenfreies Kochbuch)", false),
-    regularDish("Reispfanne mit Lachs (Glutenfreies Kochbuch)", false),
+    regularDish("Geflügel-Reis Salat (Glutenfreies Kochbuch)", false),
     regularDish("Gulasch Petti di Pollo (Glutenfreies Kochbuch)", false),
-    regularDish("Rinderlende mit Paprika-Mix (Glutenfreies Kochbuch)", false),
     regularDish("Kalbsroulade (Glutenfreies Kochbuch)", false),
-    regularDish("Gemüsepfanne", true),
-    regularDish("Hühnerfrikassee", false),
-    regularDish("Grillen", false)
+    regularDish("Kokos-Curry (Glutenfreies Kochbuch)", true),
+    regularDish("Rote Linsen mit Schafskäse (Glutenfreies Kochbuch)", true),
+    regularDish("Reispfanne mit Lachs (Glutenfreies Kochbuch)", false),
+    regularDish("Rinderlende mit Paprika-Mix (Glutenfreies Kochbuch)", false)
 ];
 
 export const deliveryServices: Dish[] = [
