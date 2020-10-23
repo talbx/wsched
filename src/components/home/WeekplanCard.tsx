@@ -12,7 +12,7 @@ const WeekplanCard = () => {
     const [veggie, setVeggie] = useState<boolean>(false)
     const [dishes, setDishes] = useState<Dish[]>([]);
     const [exceptionDishes, enableExceptionDishes] = useState<boolean>(false);
-    const [validPassphrase, setValidPassphrase] = useState<boolean>(true);
+    const [validPassphrase, setValidPassphrase] = useState<boolean>(false);
     const [key, setKey] = useState<string>('');
     const [isRestored, setRestore] = useState<boolean>(false);
 
