@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8b3ff2b3-fcd6-4cc9-81ed-e385551f7556" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/models/Weekplan.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/state/WschedState.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/home/CorruptionCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/DishCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/DishCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/DishesContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/DishesContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/DishesContainerCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/DishesContainerCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/RestoreForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/RestoreForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/WeekplanCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/WeekplanCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/todos/TodoTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todos/TodoTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Dish.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Dish.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/DishesSupplier.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/DishesSupplier.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/dateUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/dateUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/tools.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/tools.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -70,6 +78,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="100" y="123" width="1240" height="624" key="DiffContextDialog" timestamp="1603485956434">
@@ -124,14 +143,18 @@
       <screen x="0" y="23" width="1440" height="824" />
     </state>
     <state width="1398" height="206" key="GridCell.Tab.2.right/0.23.1440.824@0.23.1440.824" timestamp="1603295716174" />
-    <state x="428" y="200" width="584" height="470" key="find.popup" timestamp="1603484277282">
+    <state x="100" y="123" width="1240" height="624" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1603487088683">
       <screen x="0" y="23" width="1440" height="824" />
     </state>
-    <state x="428" y="200" width="584" height="470" key="find.popup/0.23.1440.824@0.23.1440.824" timestamp="1603484277282" />
-    <state x="385" y="171" width="670" height="676" key="search.everywhere.popup" timestamp="1603484461471">
+    <state x="100" y="123" width="1240" height="624" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.824@0.23.1440.824" timestamp="1603487088683" />
+    <state x="428" y="200" width="584" height="470" key="find.popup" timestamp="1603487275442">
       <screen x="0" y="23" width="1440" height="824" />
     </state>
-    <state x="385" y="171" width="670" height="676" key="search.everywhere.popup/0.23.1440.824@0.23.1440.824" timestamp="1603484461471" />
+    <state x="428" y="200" width="584" height="470" key="find.popup/0.23.1440.824@0.23.1440.824" timestamp="1603487275442" />
+    <state x="385" y="171" width="670" height="676" key="search.everywhere.popup" timestamp="1603487359369">
+      <screen x="0" y="23" width="1440" height="824" />
+    </state>
+    <state x="385" y="171" width="670" height="676" key="search.everywhere.popup/0.23.1440.824@0.23.1440.824" timestamp="1603487359369" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -158,12 +181,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/util/tools.ts</url>
-          <line>57</line>
+          <line>52</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/util/DishesSupplier.ts</url>
-          <line>69</line>
+          <line>68</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
