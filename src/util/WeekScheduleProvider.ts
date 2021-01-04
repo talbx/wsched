@@ -1,12 +1,15 @@
-import {Supplier} from "./Supplier";
 import {allDishesAndServices, deliveryServices, Dish, dishes, exceptionDishes} from "../models/Dish";
+
+interface Provider<T>{
+    provide(): T
+}
 
 export interface WeekSchedule {
     dishes: Dish[],
     uuid: string
 }
 
-export class DishesSupplier implements Supplier<WeekSchedule> {
+export class WeekScheduleProvider implements Provider<WeekSchedule> {
     private withOrder_ = false;
     private veggieOnly_ = false;
     private exceptionDishes_ = false;
@@ -32,11 +35,38 @@ export class DishesSupplier implements Supplier<WeekSchedule> {
         return this;
     }
 
-    supply(): WeekSchedule {
+    provide(): WeekSchedule {
         const arr: any[] = [];
-        if (this.withBbq_ && !this.veggieOnly_) {
-            arr.push(dishes.find(dish => dish.name === 'Grillen'));
+        this.handleBbq(arr);
+        this.handleOrders(arr);
+        this.handleVeggies(arr);
+        this.handleExceptionDishes(arr);
+        const selection = this.shuffle(arr);
+        return {
+            dishes: selection,
+            uuid: generateKey(selection)
+        };
+    }
+
+    private shuffle(arr: any[]) {
+        return arr.sort(() => 0.5 - Math.random()).slice(0, 7);
+    }
+
+    private handleExceptionDishes(arr: any[]) {
+        if (this.exceptionDishes_) {
+            arr.push(...exceptionDishes);
         }
+    }
+
+    private handleVeggies(arr: any[]) {
+        dishes.forEach((dish: Dish) => {
+            if ((this.veggieOnly_ && dish.veggie) || !this.veggieOnly_) {
+                arr.push(dish)
+            }
+        });
+    }
+
+    private handleOrders(arr: any[]) {
         if (this.withOrder_) {
             deliveryServices.forEach(service => {
                 if ((this.veggieOnly_ && service.veggie) || !this.veggieOnly_) {
@@ -44,22 +74,12 @@ export class DishesSupplier implements Supplier<WeekSchedule> {
                 }
             });
         }
-        dishes.forEach((dish: Dish) => {
-            if ((this.veggieOnly_ && dish.veggie) || !this.veggieOnly_) {
-                arr.push(dish)
-            }
-        });
+    }
 
-        if (this.exceptionDishes_) {
-            arr.push(...exceptionDishes);
+    private handleBbq(arr: any[]) {
+        if (this.withBbq_ && !this.veggieOnly_) {
+            arr.push(dishes.find(dish => dish.name === 'Grillen'));
         }
-
-        const shuffled = arr.sort(() => 0.5 - Math.random());
-        let selection = shuffled.slice(0, 7);
-        return {
-            dishes: selection,
-            uuid: generateKey(selection)
-        };
     }
 }
 

@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'semantic-ui-css/semantic.min.css'
 import {BrowserRouter, Link, Route, Switch} from "react-router-dom";
-import {WeekplanComponent} from "./components/home/WeekplanComponent";
+import {WeekplanComponent} from "./components/weekschedule/WeekplanComponent";
 import {RoadmapComponent} from "./components/roadmap/RoadmapComponent";
 import {Menu} from "semantic-ui-react";
 

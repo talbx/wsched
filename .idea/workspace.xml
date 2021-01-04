@@ -20,7 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b3ff2b3-fcd6-4cc9-81ed-e385551f7556" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/weekschedule/PropertiesCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/CorruptionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weekschedule/CorruptionCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/DishCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weekschedule/DishCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/DishesContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weekschedule/DishesContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/DishesContainerCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weekschedule/DishesContainerCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/RestoreForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weekschedule/RestoreForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/WeekplanCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weekschedule/WeekplanCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/WeekplanComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weekschedule/WeekplanComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/DishesSupplier.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/WeekScheduleProvider.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Supplier.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -183,8 +194,8 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/util/DishesSupplier.ts</url>
-          <line>68</line>
+          <url>file://$PROJECT_DIR$/src/util/WeekScheduleProvider.ts</url>
+          <line>71</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>

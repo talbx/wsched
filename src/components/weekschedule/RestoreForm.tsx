@@ -1,6 +1,6 @@
 import {Button, Card, Container, Grid, Input} from "semantic-ui-react";
 import React, {useState} from "react";
-import {keyToSchedule} from "../../util/DishesSupplier";
+import {keyToSchedule} from "../../util/WeekScheduleProvider";
 import {Dish} from "../../models/Dish";
 
 type RestoreFormParam = { scheduleKey: string, keyFn: (a: string) => void, dishesCallback: (f: Dish[]) => void, restoreFlag: (f: boolean) => void };
